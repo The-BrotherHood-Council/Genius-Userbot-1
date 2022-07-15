@@ -50,7 +50,7 @@ def updater():
 @Client.on_message(command(["update"]) & filters.user(OWNER_ID) & ~filters.edited)
 async def update_bot(_, message: Message):
     chat_id = message.chat.id
-    msg = await message.reply("» ᴄʜᴇᴄᴋɪɴɢ ᴜᴘᴅᴀᴛᴇs...")
+    msg = await message.reply("**🥀 ᴄʜᴇᴄᴋɪɴɢ ᴜᴘᴅᴀᴛᴇs ✨ ...**")
     update_avail = updater()
     if update_avail:
         await msg.edit("**🥀 Gᴇɴɪᴜs UsᴇʀBᴏᴛ Uᴘᴅᴀᴛᴇᴅ\nTᴏ Lᴀᴛᴇsᴛ Vᴇʀsɪᴏɴ 🔥 ...\n\n💕 Rᴇsᴛᴀʀᴛɪɴɢ: Gᴇɴɪᴜs Usᴇʀ\nBᴏᴛ, Pʟᴇᴀsᴇ » Wᴀɪᴛ ✨ ...**")
