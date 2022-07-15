@@ -153,10 +153,10 @@ async def help_parser(name, keyboard=None):
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     return (
         """**🥀 Wᴇʟᴄᴏᴍᴇ Tᴏ Hᴇʟᴘ Mᴇɴᴜ Oғ :
-Gᴇɴɪᴜs UsᴇʀBᴏᴛ Vᴇʀ : `2.0` 🔥 ...
+Gᴇɴɪᴜs UsᴇʀBᴏᴛ Vᴇʀ : `2.0` 🔥...
 
-💞 Jᴜsᴛ Cʟɪᴄᴋ Oɴ » Bᴇʟᴏᴡ Iɴʟɪɴᴇ
-Tᴏ Gᴇᴛ Gᴇɴɪᴜs Cᴏᴍᴍᴀɴᴅs ✨ ...**
+💞 Jᴜsᴛ Cʟɪᴄᴋ Oɴ › Bᴇʟᴏᴡ Iɴʟɪɴᴇ
+Tᴏ Gᴇᴛ Gᴇɴɪᴜs Cᴏᴍᴍᴀɴᴅs ✨...**
 """.format(
             first_name=name
         ),
