@@ -58,57 +58,85 @@ async def initiate_bot():
             status="[bold blue]Importation Completed!",
         )
     console.print(
-        "[bold green]Genius Userbot Started 🌸✨\n"
+        "[bold green] 🥀 Genius Userbot Started ✨\n"
     )
     try:
         await robot.send_message(
             LOG_GROUP_ID,
-            "<b>ᴄᴏɴɢʀᴀᴛs ʙᴏᴛ ʜᴀs sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ 🌸✨</b>",
+            "<b> 🥀 Genius UserBot is Here ✨</b>",
         )
     except Exception as e:
         print(
-            "\nʙᴏᴛ ʜᴀs ғᴀɪʟᴇᴅ ᴛᴏ ᴀᴄᴄᴇss ᴛʜᴇ ʟᴏɢ ᴄʜᴀɴɴᴇʟ. ᴍᴀᴋᴇ sᴜʀᴇ ᴛʜᴀᴛ ʏᴏᴜ ʜᴀᴠᴇ ᴀᴅᴅᴇᴅ ʏᴏᴜʀ ʙᴏᴛ ᴛᴏ ʏᴏᴜʀ ʟᴏɢ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴘʀᴏᴍᴏᴛᴇᴅ ᴀs ᴀᴅᴍɪɴ❗"
+            "\nBot. Has Failed To Access The Log Group, Be Sure You Have Added Your Bot To Your Log Channel And Promoted As Admin❗"
         )
-        console.print(f"\n[red]sᴛᴏᴘᴘɪɴɢ ʙᴏᴛ")
+        console.print(f"\n[red] Stopping Bot")
         return
     a = await robot.get_chat_member(LOG_GROUP_ID, BOT_ID)
     if a.status != "administrator":
-        print("ᴘʀᴏᴍᴏᴛᴇ ʙᴏᴛ ᴀs ᴀᴅᴍɪɴ ɪɴ ʟᴏɢɢᴇʀ ᴄʜᴀɴɴᴇʟ")
+        print("Promote Bot As Admin in Logger Group")
         console.print(f"\n[red]sᴛᴏᴘᴘɪɴɢ ʙᴏᴛ")
         return
-    console.print(f"\n┌[red] ʙᴏᴛ sᴛᴀʀᴛᴇᴅ ᴀs {BOT_NAME}")
-    console.print(f"├[green] ɪᴅ :- {BOT_ID}")
+    console.print(f"\n┌[red] Bot Started as {BOT_NAME}")
+    console.print(f"├[green] ID :- {BOT_ID}")
     if STRING_SESSION != "None":
         try:
             await client.send_message(
                 LOG_GROUP_ID,
-                "<b>ᴄᴏɴɢʀᴀᴛs ᴀssɪsᴛᴀɴᴛ ᴄʟɪᴇɴᴛ ʜᴀs sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ 🌸✨</b>",
+                "<b>🥀 Genius UserBot is Active ✨</b>",
             )
         except Exception as e:
             print(
-                "\nᴀssɪsᴛᴀɴᴛ ᴀᴄᴄᴏᴜɴᴛ ʜᴀs ғᴀɪʟᴇᴅ ᴛᴏ ᴀᴄᴄᴇss ᴛʜᴇ ʟᴏɢ ᴄʜᴀɴɴᴇʟ. ᴍᴀᴋᴇ sᴜʀᴇ ᴛʜᴀᴛ ʏᴏᴜ ʜᴀᴠᴇ ᴀᴅᴅᴇᴅ ʏᴏᴜʀ ᴀssɪsᴛᴀɴᴛ ᴛᴏ ʏᴏᴜʀ ʟᴏɢ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴘʀᴏᴍᴏᴛᴇᴅ ᴀs ᴀᴅᴍɪɴ❗"
+                "\nUserBot Account Has Failed To Access The Log Group.❗"
             )
-            console.print(f"\n[red]sᴛᴏᴘᴘɪɴɢ ʙᴏᴛ")
+            console.print(f"\n[red] Stopping Bot")
             return
         try:
             await client.join_chat("AdityaServer")
             await client.join_chat("AdityaDiscus")
         except:
             pass
-        console.print(f"├[red] ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ ᴀs {ASSNAME}")
-        console.print(f"├[green] ɪᴅ :- {ASSID}")
-        console.print(f"└[red] ʜᴇʀᴏ ᴍᴜsɪᴄ ʙᴏᴛ ʙᴏᴏᴛ ᴄᴏᴍᴘʟᴇᴛᴇᴅ...")
+        console.print(f"├[red] UserBot Started as {ASSNAME}")
+        console.print(f"├[green] ID :- {ASSID}")
+        console.print(f"└[red] ✅ Genius UserBot Boot Complete 💯 ...")
         await idle()
-        console.print(f"\n[red]sᴛᴏᴘᴘɪɴɢ ʙᴏᴛ")
+        console.print(f"\n[red] Userbot Stopped")
 
 
-home_text_pm = f"""ʜᴇʟʟᴏ ,
+home_text_pm = f"""**ʜᴇʟʟᴏ ,
 ᴍʏ ɴᴀᴍᴇ ɪs {BOT_NAME}.
-ᴀ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴜsɪᴄ+ᴠɪᴅᴇᴏ sᴛʀᴇᴀᴍɪɴɢ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.
-
-ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ: / """
+I Aᴍ Gᴇɴɪᴜs, Aɴ Aᴅᴠᴀɴᴄᴇᴅ UsᴇʀBᴏᴛ Wɪᴛʜ Sᴏᴍᴇ Usᴇғᴜʟ Fᴇᴀᴛᴜʀᴇs.**"""
 
 
+@robot.on_message(command(["start"]) & filters.private)
+async def start(_, message):
+    await message.reply_photo(
+        photo=f"https://te.legra.ph/file/ceee32999a8250a1f7ebb.png",
+        caption=f"""**━━━━━━━━━━━━━━━━━━━━━━━━
+💥 Hᴇʟʟᴏ, I Aᴍ Gᴇɴɪᴜs » Aɴ Aᴅᴠᴀɴᴄᴇᴅ
+Pʀᴇᴍɪᴜᴍ Tᴇʟᴇɢʀᴀᴍ Usᴇʀ Bᴏᴛ.
+
+┏━━━━━━━━━━━━━━━━━━━┓
+┣★ Oᴡɴᴇʀ'xD› : [Aᴅɪᴛʏᴀ Hᴀʟᴅᴇʀ](https://t.me/adityahalder)
+┣★ Uᴘᴅᴀᴛᴇs ›› : [Aᴅɪᴛʏᴀ Sᴇʀᴠᴇʀ](https://t.me/adityaserver)
+┣★ Sᴜᴘᴘᴏʀᴛ » : [Aᴅɪᴛʏᴀ Dɪsᴄᴜs](https://t.me/adityadiscus)
+┗━━━━━━━━━━━━━━━━━━━┛
+
+💞 Cʟɪᴄᴋ Oɴ Dᴇᴘʟᴏʏ Bᴜᴛᴛᴏɴ Tᴏ Mᴀᴋᴇ
+Yᴏᴜʀ Oᴡɴ » Gᴇɴɪᴜs Usᴇʀ Bᴏᴛ.
+━━━━━━━━━━━━━━━━━━━━━━━━**""",
+    reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "Dᴇᴘʟᴏʏ Gᴇɴɪᴜs UsᴇʀBᴏᴛ", url=f"https://github.com/GeniusBoi/Genius-UserBot")
+                ]
+                
+           ]
+        ),
+    )
+    
+    
+    
 @robot.on_message(command(["help", "start"]) & filters.group)
 async def help_command(_, message):
     text, keyboard = await help_parser(message.from_user.mention)
@@ -121,10 +149,7 @@ async def help_parser(name, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     return (
-        """ʜᴇʟʟᴏ {first_name},
-ɪ ᴀᴍ ᴀ ᴍᴜsɪᴄ ʙᴏᴛ, ɪ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴄ ɪɴ ʏᴏᴜʀ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.
-
-ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ: `/`
+        """**🥀 Hᴇʏ Hᴇʀᴇ ɪs Tʜᴇ Hᴇʟᴘ Mᴇɴᴜ Oғ Yᴏᴜʀ Gᴇɴɪᴜs UsᴇʀBᴏᴛ, Cʟɪᴄᴋ Oɴ Bᴇʟᴏᴡ Bᴜᴛᴛᴏɴs Tᴏ Gᴇᴛ Mᴏʀᴇ Iɴғᴏʀᴍᴀᴛɪᴏɴs ✨ ...**
 """.format(
             first_name=name
         ),
@@ -180,7 +205,7 @@ async def help_button(client, query):
         )
     elif home_match:
         out = private_panel()
-        await robot.send_message(
+        await robot.send_message(a
             query.from_user.id,
             text=home_text_pm,
             reply_markup=InlineKeyboardMarkup(out[1]),
