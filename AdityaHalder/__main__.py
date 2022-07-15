@@ -97,9 +97,8 @@ async def initiate_bot():
         console.print(f"├[red] ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ ᴀs {ASSNAME}")
         console.print(f"├[green] ɪᴅ :- {ASSID}")
         console.print(f"└[red] ʜᴇʀᴏ ᴍᴜsɪᴄ ʙᴏᴛ ʙᴏᴏᴛ ᴄᴏᴍᴘʟᴇᴛᴇᴅ...")
-        await pytgcalls.start()
-    await idle()
-    console.print(f"\n[red]sᴛᴏᴘᴘɪɴɢ ʙᴏᴛ")
+        await idle()
+        console.print(f"\n[red]sᴛᴏᴘᴘɪɴɢ ʙᴏᴛ")
 
 
 home_text_pm = f"""ʜᴇʟʟᴏ ,
