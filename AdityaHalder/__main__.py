@@ -13,6 +13,7 @@ from youtubesearchpython import VideosSearch
 from AdityaHalder.config import LOG_GROUP_ID, STRING_SESSION
 from AdityaHalder import client, robot, pytgcalls, ASSID, ASSNAME, BOT_ID, BOT_NAME, OWNER_ID
 from AdityaHalder.modules.helpers.filters import command
+from AdityaHalder.modules.helpers.decorators import errors, sudo_users_only
 from AdityaHalder.plugins import ALL_MODULES
 from AdityaHalder.utilities.inline import paginate_modules
 
@@ -137,7 +138,9 @@ Yᴏᴜʀ Oᴡɴ » Gᴇɴɪᴜs Usᴇʀ Bᴏᴛ.
     
     
     
-@robot.on_message(command(["help", "start"]) & filters.group)
+@robot.on_message(command(["help"]) & filters.group)
+@errors
+@sudo_users_only
 async def help_command(_, message):
     text, keyboard = await help_parser(message.from_user.mention)
     await robot.send_message(LOG_GROUP_ID, text, reply_markup=keyboard)
