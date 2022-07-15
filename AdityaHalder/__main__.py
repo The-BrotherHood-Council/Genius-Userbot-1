@@ -12,6 +12,7 @@ from youtubesearchpython import VideosSearch
 
 from AdityaHalder.config import LOG_GROUP_ID, STRING_SESSION
 from AdityaHalder import client, robot, pytgcalls, ASSID, ASSNAME, BOT_ID, BOT_NAME, OWNER_ID
+from AdityaHalder.modules.helpers.filters import command
 from AdityaHalder.plugins import ALL_MODULES
 from AdityaHalder.utilities.inline import paginate_modules
 
@@ -108,10 +109,10 @@ home_text_pm = f"""ʜᴇʟʟᴏ ,
 ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ: / """
 
 
-@robot.on_message(filters.command(["help", "start"]) & filters.private)
+@robot.on_message(command(["help", "start"]) & filters.group)
 async def help_command(_, message):
     text, keyboard = await help_parser(message.from_user.mention)
-    await robot.send_message(message.chat.id, text, reply_markup=keyboard)
+    await robot.send_message(LOG_GROUP_ID, text, reply_markup=keyboard)
 
 
 
