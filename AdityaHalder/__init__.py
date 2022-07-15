@@ -11,7 +11,7 @@ from rich.console import Console
 from rich.table import Table
 
 from AdityaHalder.config import LOG_GROUP_ID, OWNER_ID, STRING_SESSION, SUDO_USERS, UPSTREAM_BRANCH, UPSTREAM_REPO
-from AdityaHalder.modules.clientbot import client, robot, pytgcalls
+from AdityaHalder.modules.clientbot.clientbot import client, robot, pytgcalls
 from AdityaHalder.utilities.changers import time_to_seconds
 from AdityaHalder.utilities.tasks import install_requirements
 
