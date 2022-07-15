@@ -152,7 +152,11 @@ async def help_parser(name, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     return (
-        """**🥀 Hᴇʏ Hᴇʀᴇ ɪs Tʜᴇ Hᴇʟᴘ Mᴇɴᴜ Oғ Yᴏᴜʀ Gᴇɴɪᴜs UsᴇʀBᴏᴛ, Cʟɪᴄᴋ Oɴ Bᴇʟᴏᴡ Bᴜᴛᴛᴏɴs Tᴏ Gᴇᴛ Mᴏʀᴇ Iɴғᴏʀᴍᴀᴛɪᴏɴs ✨ ...**
+        """**🥀 Wᴇʟᴄᴏᴍᴇ Tᴏ Hᴇʟᴘ Mᴇɴᴜ Oғ :
+Gᴇɴɪᴜs UsᴇʀBᴏᴛ Vᴇʀ : `2.0` 🔥 ...
+
+💞 Jᴜsᴛ Cʟɪᴄᴋ Oɴ » Bᴇʟᴏᴡ Iɴʟɪɴᴇ
+Tᴏ Gᴇᴛ Gᴇɴɪᴜs Cᴏᴍᴍᴀɴᴅs ✨ ...**
 """.format(
             first_name=name
         ),
@@ -178,11 +182,11 @@ async def help_button(client, query):
     next_match = re.match(r"help_next\((.+?)\)", query.data)
     back_match = re.match(r"help_back", query.data)
     create_match = re.match(r"help_create", query.data)
-    top_text = f"""**🥀 Wᴇʟᴄᴏᴍᴇ Tᴏ Hᴇʟᴘ Mᴇɴᴜ Oғ:
-Gᴇɴɪᴜs Bᴏᴛ Vᴇʀsɪᴏɴ : `2.0` 🔥 ...
+    top_text = f"""**🥀 Wᴇʟᴄᴏᴍᴇ Tᴏ Hᴇʟᴘ Mᴇɴᴜ Oғ :
+Gᴇɴɪᴜs UsᴇʀBᴏᴛ Vᴇʀ : `2.0` 🔥 ...
 
-💞 Jᴜsᴛ Cʟɪᴄᴋ Oɴ Bᴇʟᴏᴡ Iɴʟɪɴᴇ
-Bᴜᴛᴛᴏɴs Fᴏʀ Cᴏᴍᴍᴀɴᴅs ✨ ...**
+💞 Jᴜsᴛ Cʟɪᴄᴋ Oɴ » Bᴇʟᴏᴡ Iɴʟɪɴᴇ
+Tᴏ Gᴇᴛ Gᴇɴɪᴜs Cᴏᴍᴍᴀɴᴅs ✨ ...**
  """
     if mod_match:
         module = mod_match.group(1)
