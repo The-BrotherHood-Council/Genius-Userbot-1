@@ -1,7 +1,7 @@
 import shlex
-import AdityaHalder.modules.databases.welcomedb as kaaldm
-from AdityaHalder.modules.databases.afkdb import get_afk_status
-from AdityaHalder.modules.databases.pmpermitdb import get_approved_users, pm_guard
+import AdityaHalder.modules.databases.welcome_db as kaaldm
+from AdityaHalder.modules.databases.afk_db import get_afk_status
+from AdityaHalder.modules.databases.pmpermit_db import get_approved_users, pm_guard
 from pyrogram import Client
 from pyrogram.types import Message, User
 
