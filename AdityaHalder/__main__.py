@@ -132,7 +132,7 @@ async def help_parser(name, keyboard=None):
     )
 
 
-@app.on_callback_query(filters.regex("aditya"))
+@robot.on_callback_query(filters.regex("aditya"))
 async def aditya(_, CallbackQuery):
     text, keyboard = await help_parser(CallbackQuery.from_user.mention)
     await CallbackQuery.message.edit(text, reply_markup=keyboard)
