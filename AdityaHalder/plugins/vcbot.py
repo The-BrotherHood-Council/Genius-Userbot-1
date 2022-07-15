@@ -29,6 +29,8 @@ from pytgcalls import StreamType
 from pytgcalls.types.input_stream import InputStream
 from pytgcalls.types.input_stream import InputAudioStream
 from pytgcalls.exceptions import GroupCallNotFound, NoActiveGroupCall
+from youtube_search import YoutubeSearch
+from youtubesearchpython import SearchVideos
 from yt_dlp import YoutubeDL
 from yt_dlp.utils import (
     ContentTooShortError,
@@ -404,8 +406,8 @@ __HELP__ = f""" Yᴏᴜ Cᴀɴ Pʟᴀʏ Mᴜsɪᴄ Oɴ VC
 `.resume` - Rᴇsᴜᴍᴇ Yᴏᴜʀ Mᴜsɪᴄ
 `.skip` - Sᴋɪᴘ Tᴏ Tʜᴇ Nᴇxᴛ Sᴏɴɢ
 `.stop` - Sᴛᴏᴘ Pʟᴀʏɪɴɢ Aɴᴅ Lᴇᴀᴠᴇ
-`.reload` - Rᴇʟᴏᴀᴅ Yᴏᴜʀ VC Cʟɪᴇɴᴛ
 `.song` - Dᴏᴡɴʟᴏᴀᴅ Sᴏɴɢ Yᴏᴜ Wᴀɴᴛ
+`.reload` - Rᴇʟᴏᴀᴅ Yᴏᴜʀ VC Cʟɪᴇɴᴛ
 
 **ɴᴏᴛᴇ:**
 -Aʟsᴏ Sᴜᴅᴏ Usᴇʀs Cᴀɴ Cᴏɴᴛʀᴏʟ Tʜɪs Pʟᴜɢɪɴ
