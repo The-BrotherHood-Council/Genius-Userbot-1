@@ -10,8 +10,8 @@ ALLOWED = []
 USERS_AND_WARNS = {}
 
 
-@Client.on_message(command("pmguard") & filters.me)
-async def pmguard(client, message):
+@Client.on_message(command(["pmguard", "antipm"]) & filters.me)
+async def antipm(client, message):
     arg = get_arg(message)
     if not arg:
         await message.edit("**I only understand on or off**")
@@ -51,7 +51,7 @@ async def setpmmsg(client, message):
 
 
 @Client.on_message(command("setblockmsg") & filters.me)
-async def setpmmsg(client, message):
+async def setblkmsg(client, message):
     arg = get_arg(message)
     if not arg:
         await message.edit("**What message to set**")
