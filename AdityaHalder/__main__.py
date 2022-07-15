@@ -77,7 +77,7 @@ async def initiate_bot():
         return
     console.print(f"\n┌[red] ʙᴏᴛ sᴛᴀʀᴛᴇᴅ ᴀs {BOT_NAME}")
     console.print(f"├[green] ɪᴅ :- {BOT_ID}")
-    if STRING1 != "None":
+    if STRING_SESSION != "None":
         try:
             await client.send_message(
                 LOG_GROUP_ID,
@@ -90,8 +90,8 @@ async def initiate_bot():
             console.print(f"\n[red]sᴛᴏᴘᴘɪɴɢ ʙᴏᴛ")
             return
         try:
-            await client.join_chat("HeroOfficialBots")
-            await client.join_chat("Yaaro_ki_yaarii")
+            await client.join_chat("AdityaServer")
+            await client.join_chat("AdityaDiscus")
         except:
             pass
         console.print(f"├[red] ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ ᴀs {ASSNAME}")
