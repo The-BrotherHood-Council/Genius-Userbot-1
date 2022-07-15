@@ -7,9 +7,8 @@ from AdityaHalder.config import API_ID, API_HASH, BOT_TOKEN, STRING_SESSION
 from . import queues
 
 
-client = Bot(STRING_SESSION, API_ID, API_HASH)
+client = Bot(STRING_SESSION, API_ID, API_HASH, plugins=dict(root="AdityaHalder.plugins"))
 robot = Bot(":memory:", API_ID, API_HASH, bot_token=BOT_TOKEN)
-
 
 pytgcalls = PyTgCalls(client)
 
