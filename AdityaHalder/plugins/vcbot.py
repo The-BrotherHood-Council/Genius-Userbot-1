@@ -298,13 +298,14 @@ async def update_admin(client, message):
 
 __MODULE__ = "ᴠᴄʙᴏᴛ"
 __HELP__ = f""" Yᴏᴜ Cᴀɴ Pʟᴀʏ Mᴜsɪᴄ Oɴ VC
-`.play - Pʟᴀʏ Mᴜsɪᴄ Oɴ Vᴄ`
-`.pause - Pᴀᴜsᴇ Yᴏᴜʀ Mᴜsɪᴄ`
-`.resume - Rᴇsᴜᴍᴇ Yᴏᴜʀ Mᴜsɪᴄ`
-`.skip - Sᴋɪᴘ Tᴏ Tʜᴇ Nᴇxᴛ Sᴏɴɢ `
-`.stop - Sᴛᴏᴘ Pʟᴀʏɪɴɢ Aɴᴅ Lᴇᴀᴠᴇ`
-`.reload - Rᴇʟᴏᴀᴅ Yᴏᴜʀ VC Cʟɪᴇɴᴛ`
-`.song - Dᴏᴡɴʟᴏᴀᴅ Sᴏɴɢ Yᴏᴜ Wᴀɴᴛ`
+
+`.play` - Pʟᴀʏ Mᴜsɪᴄ Oɴ Vᴄ
+`.pause` - Pᴀᴜsᴇ Yᴏᴜʀ Mᴜsɪᴄ
+`.resume` - Rᴇsᴜᴍᴇ Yᴏᴜʀ Mᴜsɪᴄ
+`.skip` - Sᴋɪᴘ Tᴏ Tʜᴇ Nᴇxᴛ Sᴏɴɢ
+`.stop` - Sᴛᴏᴘ Pʟᴀʏɪɴɢ Aɴᴅ Lᴇᴀᴠᴇ
+`.reload` - Rᴇʟᴏᴀᴅ Yᴏᴜʀ VC Cʟɪᴇɴᴛ
+`.song` - Dᴏᴡɴʟᴏᴀᴅ Sᴏɴɢ Yᴏᴜ Wᴀɴᴛ
 
 **ɴᴏᴛᴇ:**
 -Aʟsᴏ Sᴜᴅᴏ Usᴇʀs Cᴀɴ Cᴏɴᴛʀᴏʟ Tʜɪs Pʟᴜɢɪɴ
