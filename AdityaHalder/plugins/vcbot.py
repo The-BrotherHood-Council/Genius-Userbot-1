@@ -15,7 +15,6 @@ from AdityaHalder.modules.cache.admins import set
 from AdityaHalder.modules.clientbot import clientbot, queues
 from AdityaHalder.modules.clientbot.clientbot import client as USER
 from AdityaHalder.modules.helpers.admins import get_administrators
-from youtube_search import YoutubeSearch
 from AdityaHalder.modules import converter
 from AdityaHalder.modules.downloaders import youtube
 from AdityaHalder.config import que
