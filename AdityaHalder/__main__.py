@@ -159,6 +159,10 @@ async def help_parser(name, keyboard=None):
         keyboard,
     )
 
+@robot.on_callback_query(filters.regex("close"))
+@sudo_users_only
+async def close(_, query: CallbackQuery):
+    await query.message.delete()
 
 @robot.on_callback_query(filters.regex("aditya"))
 async def aditya(_, CallbackQuery):
