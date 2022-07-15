@@ -400,7 +400,7 @@ async def update_admin(client, message):
     await cach.delete()
 
 
-__MODULE__ = "ᴠᴄʙᴏᴛ"
+__MODULE__ = "ᴠᴄ ʙᴏᴛ"
 __HELP__ = f""" Yᴏᴜ Cᴀɴ Pʟᴀʏ Mᴜsɪᴄ Oɴ VC
 
 `.play` - Pʟᴀʏ Mᴜsɪᴄ Oɴ Vᴄ
