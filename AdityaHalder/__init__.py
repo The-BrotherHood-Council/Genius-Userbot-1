@@ -67,22 +67,22 @@ async def initiate_bot():
     os.system("clear")
     header = Table(show_header=True, header_style="bold yellow")
     header.add_column(
-        "\x59\x75\x6b\x6b\x69\x20\x4d\x75\x73\x69\x63\x20\x42\x6f\x74\x20\x3a\x20\x54\x68\x65\x20\x4d\x6f\x73\x74\x20\x41\x64\x76\x61\x6e\x63\x65\x64\x20\x4d\x75\x73\x69\x63\x20\x42\x6f\x74"
+        "Genius Userbot : Best Ever Userbot"
     )
     console.print(header)
     with console.status(
         "[magenta] Genius UserBot Booting...",
     ) as status:
-        console.print("┌ [red]Booting Up The Clients...\n")
+        console.print("┌ [red]Booting Up The Bot Clients...\n")
         await robot.start()
         console.print("└ [green]Booted Bot Client")
         console.print("\n┌ [red]Booting Up The User Client...")
         if STRING_SESSION != "None":
             await pytgcalls.start()
             random_assistant.append(1)
-            console.print("├ [yellow]Booted Assistant Client")
+            console.print("├ [yellow]Booted User Client")
         
-        console.print("└ [green]Assistant Client Booted Successfully!")
+        console.print("└ [green]All Client Bots Booted Successfully!")
         if "raw_files" not in listdir():
             mkdir("raw_files")
         if "downloads" not in listdir():
@@ -111,7 +111,6 @@ async def initiate_bot():
             ASSUSERNAME = getme.username
             ASSMENTION = getme.mention
         console.print("└ [green]Loaded Clients Information!")
-        console.print("\n┌ [red]Loading Sudo Users...")
         try:
             repo = Repo()
         except GitCommandError:
