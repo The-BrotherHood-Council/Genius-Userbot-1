@@ -10,10 +10,11 @@ aiohttpsession = aiohttp.ClientSession()
 admins = {}
 que = {}
 
-API_ID = int(getenv("API_ID", "12345678"))
-API_HASH = getenv("API_HASH", "0ab1c2de3f4elf")
+API_ID = int(getenv("API_ID", "1020199"))
+API_HASH = getenv("API_HASH", "3672885f650c19ef18d53548bb641d5f")
 BOT_TOKEN = getenv("BOT_TOKEN", "5498692165:AAHEBZ_Ch0BW51erHnDNDbZJNqAWpnDQ-3Q")
-DURATION_LIMIT = int(getenv("DURATION_LIMIT", "300"))
+DB_URL = getenv("DB_URL", "")
+MONGO_DB = getenv("MONGO_DB", "")
 STRING_SESSION = getenv("STRING_SESSION", "session")
 COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ ! .").split())
 OWNER_ID = int(getenv("OWNER_ID", "5336023580"))
