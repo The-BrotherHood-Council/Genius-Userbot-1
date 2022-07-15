@@ -178,17 +178,17 @@ async def help_button(client, query):
     next_match = re.match(r"help_next\((.+?)\)", query.data)
     back_match = re.match(r"help_back", query.data)
     create_match = re.match(r"help_create", query.data)
-    top_text = f"""ʜᴇʟʟᴏ {query.from_user.first_name},
+    top_text = f"""**🥀 Wᴇʟᴄᴏᴍᴇ Tᴏ Hᴇʟᴘ Mᴇɴᴜ Oғ:
+Gᴇɴɪᴜs Bᴏᴛ Vᴇʀsɪᴏɴ : `2.0` 🔥 ...
 
-ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.
-
-ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ: /
+💞 Jᴜsᴛ Cʟɪᴄᴋ Oɴ Bᴇʟᴏᴡ Iɴʟɪɴᴇ
+Bᴜᴛᴛᴏɴs Fᴏʀ Cᴏᴍᴍᴀɴᴅs ✨ ...**
  """
     if mod_match:
         module = mod_match.group(1)
         text = (
             "{} **{}**:\n".format(
-                "Here is the help for", HELPABLE[module].__MODULE__
+                "**Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ:** ", HELPABLE[module].__MODULE__
             )
             + HELPABLE[module].__HELP__
         )
