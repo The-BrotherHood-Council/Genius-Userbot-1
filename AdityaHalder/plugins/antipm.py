@@ -10,7 +10,7 @@ ALLOWED = []
 USERS_AND_WARNS = {}
 
 
-@Client.on_message(command(["pmguard", "antipm"]) & filters.me)
+@Client.on_message(command("pmguard") & filters.me)
 async def pmguard(client, message):
     arg = get_arg(message)
     if not arg:
