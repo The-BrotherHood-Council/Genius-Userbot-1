@@ -3,7 +3,7 @@ from pytgcalls import PyTgCalls
 from pytgcalls.types import Update
 from pytgcalls.types.input_stream import InputStream
 from pytgcalls.types.input_stream import InputAudioStream
-from AdityaHalder.modules.config import API_ID, API_HASH, BOT_TOKEN, STRING_SESSION
+from AdityaHalder.config import API_ID, API_HASH, BOT_TOKEN, STRING_SESSION
 from . import queues
 
 
