@@ -1,2 +1,2 @@
-from .clientbot import client, robot, pytgcalls
+from .clientbot import pytgcalls
 from . import queues
