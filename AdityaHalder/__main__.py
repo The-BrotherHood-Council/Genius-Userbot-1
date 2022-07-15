@@ -60,7 +60,7 @@ async def initiate_bot():
         "[bold green]Genius Userbot Started 🌸✨\n"
     )
     try:
-        await app.send_message(
+        await robot.send_message(
             LOG_GROUP_ID,
             "<b>ᴄᴏɴɢʀᴀᴛs ʙᴏᴛ ʜᴀs sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ 🌸✨</b>",
         )
@@ -70,7 +70,7 @@ async def initiate_bot():
         )
         console.print(f"\n[red]sᴛᴏᴘᴘɪɴɢ ʙᴏᴛ")
         return
-    a = await app.get_chat_member(LOG_GROUP_ID, BOT_ID)
+    a = await robot.get_chat_member(LOG_GROUP_ID, BOT_ID)
     if a.status != "administrator":
         print("ᴘʀᴏᴍᴏᴛᴇ ʙᴏᴛ ᴀs ᴀᴅᴍɪɴ ɪɴ ʟᴏɢɢᴇʀ ᴄʜᴀɴɴᴇʟ")
         console.print(f"\n[red]sᴛᴏᴘᴘɪɴɢ ʙᴏᴛ")
@@ -180,7 +180,7 @@ async def help_button(client, query):
         )
     elif home_match:
         out = private_panel()
-        await app.send_message(
+        await robot.send_message(
             query.from_user.id,
             text=home_text_pm,
             reply_markup=InlineKeyboardMarkup(out[1]),
