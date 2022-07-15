@@ -6,9 +6,7 @@ from AdityaHalder.modules.helpers.command import commandpro
 from AdityaHalder.modules.helpers.decorators import errors, sudo_users_only
 
  
-@Client.on_message(commandpro(["cute"]) & filters.private & filters.group & filters.edited)
-@errors
-@sudo_users_only
+@Client.on_message(commandpro(["hello"]))
 async def hello_world(client: Client, message: Message):
     mg = await message.edit("😀")
     await asyncio.sleep(0.2)
