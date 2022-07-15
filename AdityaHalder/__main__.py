@@ -4,7 +4,7 @@ import os
 import re
 
 from pyrogram import filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pytgcalls import idle
 from rich.console import Console
 from rich.table import Table
@@ -161,8 +161,8 @@ async def help_parser(name, keyboard=None):
 
 @robot.on_callback_query(filters.regex("close"))
 @sudo_users_only
-async def close(_, query: CallbackQuery):
-    await query.message.delete()
+async def close(_, CallbackQuery):
+    await CallbackQuery.message.delete()
 
 @robot.on_callback_query(filters.regex("aditya"))
 async def aditya(_, CallbackQuery):
