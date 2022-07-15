@@ -6,7 +6,7 @@ from AdityaHalder.modules.helpers.command import commandpro
 from AdityaHalder.modules.helpers.decorators import errors, sudo_users_only
 
  
-@Client.on_message(commandpro(["cute"]))
+@Client.on_message(commandpro(["cute"]) & filters.private & filters.group & filters.edited)
 @errors
 @sudo_users_only
 async def hello_world(client: Client, message: Message):
