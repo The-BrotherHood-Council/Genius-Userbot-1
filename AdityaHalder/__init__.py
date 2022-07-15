@@ -66,7 +66,7 @@ async def initiate_bot():
     )
     console.print(header)
     with console.status(
-        "[magenta] UltronX User Bot Booting...",
+        "[magenta] Genius UserBot Booting...",
     ) as status:
         console.print("┌ [red]Booting Up The Clients...\n")
         await robot.start()
@@ -94,7 +94,7 @@ async def initiate_bot():
         else:
             BOT_NAME = getme.first_name
         BOT_USERNAME = getme.username
-        if STRING1 != "None":
+        if STRING_SESSION != "None":
             getme = await client.get_me()
             ASSID = getme.id
             ASSIDS.append(ASSID)
