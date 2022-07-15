@@ -205,7 +205,7 @@ async def help_button(client, query):
         )
     elif home_match:
         out = private_panel()
-        await robot.send_message(a
+        await robot.send_message(
             query.from_user.id,
             text=home_text_pm,
             reply_markup=InlineKeyboardMarkup(out[1]),
