@@ -9,8 +9,9 @@ from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError
 from rich.console import Console
 from rich.table import Table
+from motor.motor_asyncio import AsyncIOMotorClient as KaalXD
 
-from AdityaHalder.config import LOG_GROUP_ID, OWNER_ID, STRING_SESSION, SUDO_USERS, UPSTREAM_BRANCH, UPSTREAM_REPO
+from AdityaHalder.config import MONGO_DB_URL, LOG_GROUP_ID, OWNER_ID, STRING_SESSION, SUDO_USERS, UPSTREAM_BRANCH, UPSTREAM_REPO
 from AdityaHalder.modules.clientbot.clientbot import client, robot, pytgcalls
 from AdityaHalder.utilities.changers import time_to_seconds
 from AdityaHalder.utilities.tasks import install_requirements
@@ -26,6 +27,10 @@ UPSTREAM_REPO = UPSTREAM_REPO
 ### Modules
 MOD_LOAD = []
 MOD_NOLOAD = []
+
+### Mongo DB
+MONGODB_CLI = KaalXD(MONGO_DB_URL)
+db = MONGODB_CLI.Aditya
 
 ### Boot Time
 boottime = time.time()
