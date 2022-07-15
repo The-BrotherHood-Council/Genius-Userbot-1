@@ -39,7 +39,6 @@ pytgcalls = pytgcalls
 SUDOERS = SUDO_USERS
 OWNER_ID = OWNER_ID
 LOG_GROUP_ID = LOG_GROUP_ID
-DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
 
 ### Bot Info
 BOT_ID = 0
