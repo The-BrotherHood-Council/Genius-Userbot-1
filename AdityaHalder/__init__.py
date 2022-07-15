@@ -112,19 +112,6 @@ async def initiate_bot():
             ASSMENTION = getme.mention
         console.print("└ [green]Loaded Clients Information!")
         console.print("\n┌ [red]Loading Sudo Users...")
-        sudoersdb = db.sudoers
-        sudoers = await sudoersdb.find_one({"sudo": "sudo"})
-        sudoers = [] if not sudoers else sudoers["sudoers"]
-        for user_id in SUDOERS:
-            if user_id not in sudoers:
-                sudoers.append(user_id)
-                await sudoersdb.update_one(
-                    {"sudo": "sudo"},
-                    {"$set": {"sudoers": sudoers}},
-                    upsert=True,
-                )
-        SUDOERS = (SUDOERS + sudoers + OWNER_ID) if sudoers else SUDOERS
-        console.print("└ [green]Loaded Sudo Users Successfully!\n")
         try:
             repo = Repo()
         except GitCommandError:
