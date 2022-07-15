@@ -66,6 +66,6 @@ __HELP__ = f"""
 **Tʜɪs Pʟᴜɢɪɴ Fᴏʀ Uᴘᴅᴀᴛᴇ**
 
 
-/update
+`.update`
 - Update Your Bot.
 """
