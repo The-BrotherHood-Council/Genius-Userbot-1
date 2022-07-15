@@ -53,20 +53,19 @@ async def update_bot(_, message: Message):
     msg = await message.reply("» ᴄʜᴇᴄᴋɪɴɢ ᴜᴘᴅᴀᴛᴇs...")
     update_avail = updater()
     if update_avail:
-        await msg.edit("»__ ᴜᴘᴅᴀᴛᴇ ғɪɴɪsʜᴇᴅ __\n» __ʙᴏᴛ ʀᴇsᴛᴀʀᴛɪɴɢ, ʙᴀᴄᴋ ᴀᴄᴛɪᴠᴇ ᴀɢᴀɪɴ ɪɴ 2ᴍɪɴ __.")
+        await msg.edit("🥀 **📡 Gᴇɴɪᴜs :** __Uᴘᴅᴀᴛᴇ Fɪɴɪsʜᴇᴅ.__\n» `💞 Rᴇsᴛᴀʀᴛɪɴɢ UsᴇʀBᴏᴛ`")
         system("git pull -f && pip3 install -U -r Installer")
         system("python3 -m AdityaHalder")
         #execle(sys.executable, sys.executable, "-m AdityaHalder", environ)
         return
-    await msg.edit(f"__» ᴀʟʀᴇᴀᴅʏ ᴜᴘᴅᴀᴛᴇᴅ ʙʏ ɢᴇɴɪᴜs __")
+    await msg.edit(f"**🥀 Gᴇɴɪᴜs** » __Aʟʀᴇᴀᴅʏ Rᴜɴɴɪɴɢ Lᴀᴛᴇsᴛ Vᴇʀsɪᴏɴ ✨ ...__")
 
 __MODULE__ = "ᴜᴘᴅᴀᴛᴇ"
 __HELP__ = f"""
 
-**Note:**
-**Tʜɪs Pʟᴜɢɪɴ Fᴏʀ Uᴘᴅᴀᴛᴇ**
+**Nᴏᴛᴇ:**
+**🥀 Tʜɪs Pʟᴜɢɪɴ Fᴏʀ Uᴘᴅᴀᴛᴇ Yᴏᴜʀ Usᴇʀ Bᴏᴛ**
 
-
-`.update`
-- Update Your Bot.
+**🇮🇳 Cᴏᴍᴍᴀɴᴅ :**
+`.update` - __Tᴏ Uᴘᴅᴀᴛᴇ Gᴇɴɪᴜs UsᴇʀBᴏᴛ Tᴏ Lᴀᴛᴇsᴛ Vᴇʀsɪᴏɴ ...__
 """
