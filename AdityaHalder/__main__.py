@@ -110,7 +110,7 @@ I Aᴍ Gᴇɴɪᴜs, Aɴ Aᴅᴠᴀɴᴄᴇᴅ UsᴇʀBᴏᴛ Wɪᴛʜ Sᴏᴍ�
 @robot.on_message(command(["start"]) & filters.private)
 async def start(_, message):
     await message.reply_photo(
-        photo=f"https://te.legra.ph/file/ceee32999a8250a1f7ebb.png",
+        photo=f"https://telegra.ph/file/027283ee9defebc3298b8.png",
         caption=f"""**━━━━━━━━━━━━━━━━━━━━━━━━
 💥 Hᴇʟʟᴏ, I Aᴍ Gᴇɴɪᴜs » Aɴ Aᴅᴠᴀɴᴄᴇᴅ
 Pʀᴇᴍɪᴜᴍ Tᴇʟᴇɢʀᴀᴍ Usᴇʀ Bᴏᴛ.
@@ -128,7 +128,7 @@ Yᴏᴜʀ Oᴡɴ » Gᴇɴɪᴜs Usᴇʀ Bᴏᴛ.
             [
                 [
                     InlineKeyboardButton(
-                        "Dᴇᴘʟᴏʏ Gᴇɴɪᴜs UsᴇʀBᴏᴛ", url=f"https://github.com/GeniusBoi/Genius-UserBot")
+                        "💥 Dᴇᴘʟᴏʏ Gᴇɴɪᴜs UsᴇʀBᴏᴛ ✨", url=f"https://github.com/GeniusBoi/Genius-UserBot")
                 ]
                 
            ]
