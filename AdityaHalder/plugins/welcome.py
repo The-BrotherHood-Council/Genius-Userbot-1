@@ -12,7 +12,7 @@ LOG_CHAT = LOG_GROUP_ID
 
 
 @Client.on_message(command("clearwelcome"))
-@erros
+@errors
 @sudo_users_only
 async def welcome(client, message):
     await Kaal.clear_welcome(str(message.chat.id))
