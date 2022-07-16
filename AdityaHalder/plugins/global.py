@@ -114,7 +114,7 @@ async def gmute(app: Client, message):
 
 
 @Client.on_message(filters.command("ungmute", ["."]) & filters.me)
-async def gmute(app: Client, message):
+async def ungmute(app: Client, message):
     reply = message.reply_to_message
     if reply:
         user = reply.from_user["id"]
@@ -143,7 +143,7 @@ async def gban(app: Client, message):
 
 
 @Client.on_message(filters.command("ungban", ["."]) & filters.me)
-async def gbam(app: Client, message):
+async def ungban(app: Client, message):
     reply = message.reply_to_message
     if reply:
         user = reply.from_user["id"]
@@ -173,7 +173,7 @@ async def check_and_del(app: Client, message):
         pass
 
 @Client.on_message(filters.group & filters.incoming)
-async def check_and_del(app: Client, message):
+async def check_and_del_(app: Client, message):
     if not message:
         return
     try:
@@ -219,7 +219,7 @@ async def gmute_him(client: Client, message: Message):
 @Client.on_message(command("ungxxmute"))
 @errors
 @sudo_users_only
-async def gmute_him(client: Client, message: Message):
+async def gmute_him_(client: Client, message: Message):
     ug = await message.edit_text("`Processing..`")
     text_ = get_text(message)
     user_ = get_user(message, text_)[0]
