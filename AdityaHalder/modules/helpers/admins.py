@@ -1,14 +1,14 @@
 import asyncio
 from time import time
 from typing import List
-from GeniusRobot import *
+from AdityaHalder import *
 from pyrogram import Client
 from pyrogram.types import Message, Chat, User
-from GeniusRobot.modules.helpers.interval import IntervalHelper
-import GeniusRobot.modules.cache.admins
+from AdityaHalder.modules.helpers.interval import IntervalHelper
+import AdityaHalder.modules.cache.admins
 
 async def get_administrators(chat: Chat) -> List[User]:
-    get = GeniusRobot.modules.cache.admins.get(chat.id)
+    get = AdityaHalder.modules.cache.admins.get(chat.id)
 
     if get:
         return get
@@ -20,7 +20,7 @@ async def get_administrators(chat: Chat) -> List[User]:
             if administrator.can_manage_voice_chats:
                 to_set.append(administrator.user.id)
 
-        GeniusRobot.modules.cache.admins.set(chat.id, to_set)
+        AdityaHalder.modules.cache.admins.set(chat.id, to_set)
         return await get_administrators(chat)
 
 
