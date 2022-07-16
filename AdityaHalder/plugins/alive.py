@@ -1,6 +1,6 @@
 # Aditya Halder
 
-__MODULE__ = "ᴀᴅɪᴛʏᴀ"
+__MODULE__ = "Aʟɪᴠᴇ"
 __HELP__ = f"""
 
 
