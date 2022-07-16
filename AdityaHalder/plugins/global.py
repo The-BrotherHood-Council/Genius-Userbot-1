@@ -16,7 +16,6 @@ from AdityaHalder.config import *
 from AdityaHalder.modules.helpers.filters import *
 from AdityaHalder.modules.helpers.decorators import errors, sudo_users_only
 from AdityaHalder.modules.databases.gmute_db import get_gmuted_users, gmute_user, ungmute_user
-from AdityaHalder.modules.databases.gban_db import *
 from AdityaHalder.modules.helpers.program import get_arg
 from AdityaHalder.modules.helpers.admins import CheckAdmin
 
