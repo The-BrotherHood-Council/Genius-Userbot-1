@@ -6,7 +6,7 @@ from pyrogram.types import Message
 from pyrogram import filters, Client
 from git.exc import GitCommandError, InvalidGitRepositoryError
 from AdityaHalder.modules.helpers.basics import edit_or_reply
-from AdityaHalder.modules.helpers.command import commandpro
+from AdityaHalder.modules.helpers.command import command
 from AdityaHalder.modules.helpers.decorators import errors, sudo_users_only
 
 
