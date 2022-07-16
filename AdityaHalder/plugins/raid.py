@@ -10,15 +10,13 @@ from pyrogram.types import (
     InlineQueryResultArticle,
     InputTextMessageContent,
     Message)
-from AdityaHalder.utilities.mongo import kaalub_info, rkaal, runkaal, loveub_info, rlove, runlove 
-from AdityaHalder.utilities.data import *
 from AdityaHalder.config import *
-from AdityaHalder.modules.helpers.program import get_arg
-
+from AdityaHalder.utilities.data import *
+from AdityaHalder.utilities.mongo import * 
 
 
 @Client.on_message( ~filters.me & filters.incoming)
-async def watch_raid(client: Client, message: Message):
+async def watch_raids(client: Client, message: Message):
     if not message:
         return
     if not message.from_user:
