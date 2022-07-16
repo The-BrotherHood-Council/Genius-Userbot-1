@@ -1,4 +1,4 @@
-from pyrogram import filters
+from pyrogram import filters, Client
 from traceback import format_exc
 from typing import Tuple
 import asyncio
@@ -15,6 +15,11 @@ from AdityaHalder.utilities.data import *
 from AdityaHalder.config import *
 from AdityaHalder.modules.helpers.filters import *
 from AdityaHalder.modules.helpers.decorators import errors, sudo_users_only
+from AdityaHalder.modules.databases.gmute_db import get_gmuted_users, gmute_user, ungmute_user
+from AdityaHalder.modules.databases.gbandb import *
+from AdityaHalder.modules.helpers.program import get_arg
+from AdityaHalder.modules.helpers.admins import CheckAdmin
+
 
 
 async def iter_chats(client: Client):
@@ -91,7 +96,97 @@ def get_text(message: Message) -> [None, str]:
         return None
 
 
-@Client.on_message(command("gmute"))
+# Aditya Halder
+
+@Client.on_message(filters.command("gmute", ["."]) & filters.me)
+async def gmute(app: Client, message):
+    reply = message.reply_to_message
+    if reply:
+        user = reply.from_user["id"]
+    else:
+        user = get_arg(message)
+        if not user:
+            await message.edit("**Whome should I gmute?**")
+            return
+    get_user = await app.get_users(user)
+    await gmute_user(get_user.id)
+    await message.edit(f"**Successfully Taped {get_user.first_name}, This users mouth!**")
+
+
+@Client.on_message(filters.command("ungmute", ["."]) & filters.me)
+async def gmute(app: Client, message):
+    reply = message.reply_to_message
+    if reply:
+        user = reply.from_user["id"]
+    else:
+        user = get_arg(message)
+        if not user:
+            await message.edit("**Whome should I ungmute?**")
+            return
+    get_user = await app.get_users(user)
+    await ungmute_user(get_user.id)
+    await message.edit(f"**Unmuted {get_user.first_name}, enjoy!**")
+
+@Client.on_message(filters.command("gban", ["."]) & filters.me)
+async def gban(app: Client, message):
+    reply = message.reply_to_message
+    if reply:
+        user = reply.from_user["id"]
+    else:
+        user = get_arg(message)
+        if not user:
+            await message.edit("**Whome should I gban?**")
+            return
+    get_user = await app.get_users(user)
+    await gban_user(get_user.id)
+    await message.edit(f"**Successfully Gbanned {get_user.first_name}!**")
+
+
+@Client.on_message(filters.command("ungban", ["."]) & filters.me)
+async def gbam(app: Client, message):
+    reply = message.reply_to_message
+    if reply:
+        user = reply.from_user["id"]
+    else:
+        user = get_arg(message)
+        if not user:
+            await message.edit("**Whome should I ungban?**")
+            return
+    get_user = await app.get_users(user)
+    await ungban_user(get_user.id)
+    await message.edit(f"**Ungbanned {get_user.first_name}, enjoy!**")
+
+
+@Client.on_message(filters.group & filters.incoming)
+async def check_and_del(app: Client, message):
+    if not message:
+        return
+    try:
+        if not message.from_user.id in (await get_gmuted_users()):
+            return
+    except AttributeError:
+        return
+    message_id = message.message_id
+    try:
+        await app.delete_messages(message.chat.id, message_id)
+    except:
+        pass
+
+@Client.on_message(filters.group & filters.incoming)
+async def check_and_del(app: Client, message):
+    if not message:
+        return
+    try:
+        if not message.from_user.id in (await get_gban_users()):
+            return
+    except AttributeError:
+        return
+    try:
+        await app.kick_chat_member(chat_id=message.chat.id, user_id=message.from_user.id)
+    except:
+        pass
+
+@Client.on_message(command("gxxmute"))
 @errors
 @sudo_users_only
 async def gmute_him(client: Client, message: Message):
@@ -121,7 +216,7 @@ async def gmute_him(client: Client, message: Message):
     
 
 
-@Client.on_message(command("ungmute"))
+@Client.on_message(command("ungxxmute"))
 @errors
 @sudo_users_only
 async def gmute_him(client: Client, message: Message):
@@ -149,7 +244,7 @@ async def gmute_him(client: Client, message: Message):
    
 
 
-@Client.on_message(command("gban"))
+@Client.on_message(command("gxxban"))
 @errors
 @sudo_users_only
 async def gbun_him(client: Client, message: Message):
@@ -191,7 +286,7 @@ async def gbun_him(client: Client, message: Message):
     await gbun.edit(gbanned)
     
 
-@Client.on_message(command("ungban"))
+@Client.on_message(command("ungxxban"))
 @errors
 @sudo_users_only
 async def ungbun_him(client: Client, message: Message):
@@ -282,7 +377,7 @@ async def watch(client: Client, message: Message):
     
 
 
-@Client.on_message(command("gbanlist"))
+@Client.on_message(command("gbanxxlist"))
 @errors
 @sudo_users_only
 async def give_glist(client: Client, message: Message):
@@ -336,8 +431,6 @@ __HELP__ = f"""
 `.gban` - ** Rᴇᴘʟʏ Tᴏ Aɴʏᴏɴᴇ Wɪᴛʜ Tʜɪs Cᴏᴍᴍᴀɴᴅ Tᴏ Gʙᴀɴ.**
 
 `.ungban` - ** Rᴇᴘʟʏ Tᴏ Aɴʏᴏɴᴇ Wɪᴛʜ Tʜɪs Cᴏᴍᴍᴀɴᴅ Tᴏ UɴGʙᴀɴ.**
-
-`.gbanlist` - ** Gᴇᴛ Lɪsᴛ Oғ Aʟʟ Gʙᴀɴ Usᴇʀs.**
 
 `.gcast` - ** Rᴇᴘʟʏ Tᴏ Aɴʏ Mᴇssᴀɢᴇ Tᴏ Gʟᴏʙᴀʟʏ Bʀᴏᴀᴅᴄᴀsᴛ**
 """
