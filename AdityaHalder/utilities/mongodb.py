@@ -1,5 +1,5 @@
 # Aditya Halder // @AdityaHalder
-from AdityaHalder.modules.databases import db as dbb
+from AdityaHalder.utilities import dbb
 
 Rbun = dbb["RBAN"]
 
