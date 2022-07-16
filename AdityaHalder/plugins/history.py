@@ -12,7 +12,7 @@ from AdityaHalder.modules.helpers.decorators import sudo_users_only, errors
 @Client.on_message(command([".history"]))
 @errors
 @sudo_users_only
-async def history(client: Client, message: Message):
+async def user_history(client: Client, message: Message):
     lol = await edit_or_reply(message, "Processing please wait")
     if not message.reply_to_message:
         await lol.edit("reply to any message")
