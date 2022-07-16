@@ -59,7 +59,7 @@ async def update_bot(_, message: Message):
         return
     await msg.edit(f"**🥀 Gᴇɴɪᴜs UsᴇʀBᴏᴛ Aʟʀᴇᴀᴅʏ\nUᴘᴅᴀᴛᴇᴅ Tᴏ Lᴀᴛᴇsᴛ 🔥 ...\n\n💕 Fᴏʀ Aɴʏ Qᴜᴇʀʏ › Cᴏɴᴛᴀᴄᴛ\nTᴏ » @AdityaHalder ✨ ...**")
 
-__MODULE__ = "ᴜᴘᴅᴀᴛᴇ"
+__MODULE__ = "Uᴘᴅᴀᴛᴇ"
 __HELP__ = f"""
 
 **Nᴏᴛᴇ:**
