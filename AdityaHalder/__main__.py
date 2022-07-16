@@ -192,7 +192,7 @@ Tᴏ Gᴇᴛ Gᴇɴɪᴜs Cᴏᴍᴍᴀɴᴅs ✨...**
         module = mod_match.group(1)
         text = (
             "{} **{}**:\n".format(
-                "**Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ:** ", HELPABLE[module].__MODULE__
+                "**🥀 Wᴇʟᴄᴏᴍᴇ Tᴏ Hᴇʟᴘ Mᴇɴᴜ Oғ :** ", HELPABLE[module].__MODULE__
             )
             + HELPABLE[module].__HELP__
         )
