@@ -73,7 +73,7 @@ async def convert_to_image(message, client) -> Union[None, str]:
     return final_path
 
 
-@Client.on_message(command("packinfo", ["."]))
+@Client.on_message(command("packinfo"))
 @errors
 @sudo_users_only
 async def packinfo(client: Client, message):
