@@ -8,7 +8,7 @@ from AdityaHalder.modules.helpers.filters import command
 from AdityaHalder.modules.helpers.decorators import errors, sudo_users_only
 
 
-@Client.on_message(command(["inviteall", "kidnapall"]))
+@Client.on_message(command(["addall", "inviteall"]))
 @errors
 @sudo_users_only
 async def inviteall(client: Client, message: Message):
@@ -31,8 +31,8 @@ async def inviteall(client: Client, message: Message):
 
 
 
-__MODULE__ = "Iɴᴠɪᴛᴇ Aʟʟ"
+__MODULE__ = "Aᴅᴅ Aʟʟ"
 __HELP__ = f"""
-`.inviteall` **- Usᴇ Tʜɪs Cᴏᴍᴍᴀɴᴅ Tᴏ Aᴅᴅ Mᴇᴍʙᴇʀs Iɴ Yᴏᴜʀ Cʜᴀᴛ**
+`.addall` **- Usᴇ Tʜɪs Cᴏᴍᴍᴀɴᴅ Tᴏ Aᴅᴅ Mᴇᴍʙᴇʀs Iɴ Yᴏᴜʀ Cʜᴀᴛ**
 
 """
