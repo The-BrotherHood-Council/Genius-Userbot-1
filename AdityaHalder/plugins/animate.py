@@ -45,7 +45,7 @@ async def hello(client: Client, message: Message):
     await mg.edit("😎")
     
 
-__MODULE__ = "ᴀɴɪᴍᴀᴛᴇ"
+__MODULE__ = "Aɴɪᴍᴀᴛᴇ"
 __HELP__ = f"""**🇮🇳 Bᴇsᴛ Aɴɪᴍᴀᴛɪᴏɴs :**
 
 `hello` - **Cʜᴀɴɢɪɴɢ Eᴍᴏᴊɪ Fᴜɴ**
