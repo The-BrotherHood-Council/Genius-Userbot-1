@@ -6,6 +6,7 @@ import shutil
 import shlex
 from PIL import Image
 from pyrogram.types import Message
+from pyrogram import Client, filters
 from pyrogram.errors import StickersetInvalid, YouBlockedUser
 from pyrogram.raw.functions.messages import GetStickerSet
 from pyrogram.raw.types import InputStickerSetShortName
