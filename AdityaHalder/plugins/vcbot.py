@@ -80,7 +80,7 @@ def time_to_seconds(time):
     & ~filters.forwarded
     & ~filters.via_bot
 )
-#errors
+@errors
 @sudo_users_only
 async def play(_, message: Message):
     global que
