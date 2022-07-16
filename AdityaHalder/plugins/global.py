@@ -329,7 +329,7 @@ async def gbroadcast(client: Client, message: Message):
 
 
 
-__MODULE__ = "ɢʟᴏʙᴀʟ"
+__MODULE__ = "Gʟᴏʙᴀʟ"
 __HELP__ = f"""
 **🥀 Gʙᴀɴ & Gᴍᴜᴛᴇ Mᴏᴅᴜʟᴇ ✨**
 
