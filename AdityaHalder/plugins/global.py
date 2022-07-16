@@ -126,7 +126,9 @@ async def ungmute(app: Client, message):
     await ungmute_user(get_user.id)
     await message.edit(f"**Unmuted {get_user.first_name}, enjoy!**")
 
-@Client.on_message(filters.command("gban", ["."]) & filters.me)
+@Client.on_message(command("gban"))
+@errors
+@sudo_users_only
 async def gbun_him(client: Client, message: Message):
     gbun = await message.edit_text("`Processing..`")
     text_ = get_text(message)
@@ -167,7 +169,9 @@ async def gbun_him(client: Client, message: Message):
     
 
 
-@Client.on_message(filters.me & command("ungban"))
+@Client.on_message(command("ungban"))
+@errors
+@sudo_users_only
 async def ungbun_him(client: Client, message: Message):
     ungbun= await message.edit_text("`Processing..`")
     text_ = get_text(message)
@@ -263,6 +267,22 @@ async def watch(client: Client, message: Message):
             message.chat.id,
             f"**#GbanWatch** \n**Chat ID :** `{message.chat.id}` \n**User :** `{user}` \n**Reason :** `{await gban_info(user)}`",
         )
+
+
+@Client.on_message(command("gbanlist"))
+@errors
+@sudo_users_only
+async def give_glist(client: Client, message: Message):
+    await message.delete()
+    oof = "**#GBanList** \n\n"
+    glist = await message.edit_text("`Processing..`")
+    list_ = await gban_list()
+    if len(list_) == 0:
+        await glist.edit("`No User is Gbanned Till Now!`")
+        return
+    for lit in list_:
+        oof += f"**User :** `{lit['user']}` \n**Reason :** `{lit['reason']}` \n\n"
+    await edit_or_send_as_file(oof, glist, client, "GbanList", "Gban-List")
 
 
 @Client.on_message(command("gcast"))
