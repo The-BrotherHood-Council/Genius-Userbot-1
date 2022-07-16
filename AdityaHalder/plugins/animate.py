@@ -77,9 +77,7 @@ async def phase4(message):
         await asyncio.sleep(SLEEP)
 
 
-@Client.on_message(command(["hearts", "heart"]))
-@errors
-@sudo_users_only
+@Client.on_message(command(["hearts", "heart"]) & filters.me)
 async def hearts(client: Client, message: Message):
     await phase1(message)
     await asyncio.sleep(SLEEP * 3)
@@ -93,8 +91,10 @@ async def hearts(client: Client, message: Message):
 
 
 @Client.on_message(command(["emoji"]))
+@errors
+@sudo_users_only
 async def hello_world(client: Client, message: Message):
-    mg = await message.edit("😀")
+    mg = await edit_or_reply(message, "😀")
     await asyncio.sleep(1)
     await mg.edit("😄")
     await asyncio.sleep(1)
