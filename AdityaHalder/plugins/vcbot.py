@@ -204,7 +204,7 @@ async def play(_, message: Message):
     
     
 @Client.on_message(commandpro(["pause", ".pause", "!pause", "/pause", "pse"]) & other_filters)
-#errors
+@errors
 @sudo_users_only
 async def pause(_, message: Message):
     await message.delete()
@@ -221,7 +221,7 @@ async def pause(_, message: Message):
         await pase.delete()
 
 @Client.on_message(commandpro(["resume", ".resume", "!resume", "/resume", "rsm"]) & other_filters)
-#errors
+@errors
 @sudo_users_only
 async def resume(_, message: Message):
     await message.delete()
@@ -239,7 +239,7 @@ async def resume(_, message: Message):
 
 
 @Client.on_message(commandpro(["skip", ".skip", "!skip", "/skip", "skp"]) & other_filters)
-#errors
+@errors
 @sudo_users_only
 async def skip(_, message: Message):
     global que
@@ -273,7 +273,7 @@ async def skip(_, message: Message):
 
 
 @Client.on_message(commandpro(["stop", "end", ".stop", ".end", "!stop", "!end", "/stop", "/end", "stp"]) & other_filters)
-#errors
+@errors
 @sudo_users_only
 async def stop(_, message: Message):
     await message.delete()
@@ -297,7 +297,7 @@ async def stop(_, message: Message):
 
 
 @Client.on_message(commandpro(["song", "music", ".song", "music", "!song", "!music", "/song", "/music" "sng", "msc"]))
-#errors
+@errors
 @sudo_users_only
 async def song(client, message):
     cap = "**🥀 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝 𝐁𝐲 ː [𝐌𝐫᭄'𝐊𝐚𝐚𝐋-𝐱𝐃](https://t.me/iamkaal)**"
@@ -386,7 +386,7 @@ async def song(client, message):
 
 
 @Client.on_message(commandpro(["reload", "admincache", ".reload", ".admincache", "!reload", "!admincache", "/reload", "/admincache" "rld", "ach"]))
-#errors
+@errors
 @sudo_users_only
 async def update_admin(client, message):
     global a
