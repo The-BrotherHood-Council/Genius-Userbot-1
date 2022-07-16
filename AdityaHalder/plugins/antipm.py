@@ -118,7 +118,7 @@ async def reply_pm(app: Client, message):
 
 
 
-__MODULE__ = "ᴀɴᴛɪ ᴘᴍ"
+__MODULE__ = "Aɴᴛɪ PM"
 __HELP__ = f""" Tʜɪs Mᴏᴅᴜʟᴇ Oɴʟʏ Fᴏʀ Bᴏᴛ Oᴡɴᴇʀ
 
 `.pmguard [on or off]` - Aᴄᴛɪᴠᴀᴛᴇ Oʀ Dᴇᴀᴄᴛɪᴠᴀᴛᴇ Aɴᴛɪ-Pᴍ
