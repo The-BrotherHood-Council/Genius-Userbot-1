@@ -33,6 +33,7 @@ async def inviteall(client: Client, message: Message):
 
 __MODULE__ = "Aᴅᴅ Aʟʟ"
 __HELP__ = f"""
-`.addall` **- Usᴇ Tʜɪs Cᴏᴍᴍᴀɴᴅ Tᴏ Aᴅᴅ Mᴇᴍʙᴇʀs Iɴ Yᴏᴜʀ Cʜᴀᴛ**
+`.addall [@groupusername]` **- Usᴇ Tʜɪs Cᴏᴍᴍᴀɴᴅ Tᴏ Aᴅᴅ Mᴇᴍʙᴇʀs Iɴ Yᴏᴜʀ Cʜᴀᴛ**
 
+**Exᴀᴍᴘʟᴇ:-** .addall @adityadiscus
 """
