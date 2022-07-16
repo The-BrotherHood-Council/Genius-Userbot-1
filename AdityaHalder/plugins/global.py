@@ -272,7 +272,6 @@ async def watch(client: Client, message: Message):
 @errors
 @sudo_users_only
 async def give_glist(client: Client, message: Message):
-    await message.delete()
     oof = "**#GBanList** \n\n"
     glist = await message.edit_text("`Processing..`")
     list_ = await gban_list()
