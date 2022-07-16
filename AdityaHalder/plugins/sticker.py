@@ -122,7 +122,7 @@ async def kang_stick(app: Client, message: Message):
     a_emoji = get_arg(message)
     pack = 1
     nm = message.from_user.username
-    packname = f"@{nm} Kang Pack {pack}"
+    packname = f"@{nm} Stickers {pack}"
     packshortname = f"GENIUS_{message.from_user.id}_{pack}"
     emoji = "🤔"
     try:
@@ -186,8 +186,8 @@ async def kang_stick(app: Client, message: Message):
         while limit in messi.text:
             pack += 1
             prev_pack = int(pack) - 1
-            await kang_msg.edit(f"He he, Kang Pack Number `{prev_pack}` is Full Of Stickers! Now Switching to `{pack}` Pack!")
-            packname = f"@{nm} Kang Pack {pack}"
+            await kang_msg.edit(f"He he, Pack Number `{prev_pack}` is Full Of Stickers! Now Switching to `{pack}` Pack!")
+            packname = f"@{nm} Stickers {pack}"
             packshortname = f"GENIUS_{message.from_user.id}_{pack}"
             if is_anim:
                 packshortname += "_animated"
