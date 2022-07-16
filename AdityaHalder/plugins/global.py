@@ -95,7 +95,6 @@ def get_text(message: Message) -> [None, str]:
 @errors
 @sudo_users_only
 async def gmute_him(client: Client, message: Message):
-    await message.delete()
     g = await message.edit_text("`Processing..`")
     text_ = get_text(message)
     user, reason = get_user(message, text_)
@@ -126,7 +125,6 @@ async def gmute_him(client: Client, message: Message):
 @errors
 @sudo_users_only
 async def gmute_him(client: Client, message: Message):
-    await message.delete()
     ug = await message.edit_text("`Processing..`")
     text_ = get_text(message)
     user_ = get_user(message, text_)[0]
@@ -155,7 +153,6 @@ async def gmute_him(client: Client, message: Message):
 @errors
 @sudo_users_only
 async def gbun_him(client: Client, message: Message):
-    await message.delete()
     gbun = await message.edit_text("`Processing..`")
     text_ = get_text(message)
     user, reason = get_user(message, text_)
@@ -198,7 +195,6 @@ async def gbun_him(client: Client, message: Message):
 @errors
 @sudo_users_only
 async def ungbun_him(client: Client, message: Message):
-    await message.delete()
     ungbun= await message.edit_text("`Processing..`")
     text_ = get_text(message)
     user = get_user(message, text_)[0]
@@ -290,7 +286,6 @@ async def watch(client: Client, message: Message):
 @errors
 @sudo_users_only
 async def give_glist(client: Client, message: Message):
-    await message.delete()
     oof = "**#GBanList** \n\n"
     glist = await message.edit_text("`Processing..`")
     list_ = await gban_list()
@@ -306,7 +301,6 @@ async def give_glist(client: Client, message: Message):
 @errors
 @sudo_users_only
 async def gbroadcast(client: Client, message: Message):
-    await message.delete()
     msg_ = await message.edit_text("`Processing..`")
     failed = 0
     if not message.reply_to_message:
