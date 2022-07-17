@@ -1,4 +1,4 @@
-# Aditya Halder
+# AdityaHalder
 
 __MODULE__ = "Aʟɪᴠᴇ"
 __HELP__ = f"""
