@@ -1,18 +1,17 @@
 import asyncio
-
 from pyrogram import Client, filters 
 from pyrogram.types import Message
-
 from AdityaHalder.modules.helpers.basics import edit_or_reply
 from AdityaHalder.modules.helpers.filters import command
-from AdityaHalder.modules.helpers.decorators import errors, sudo_users_only
+from AdityaHalder.modules.helpers.command import commandpro
+from AdityaHalder.utilities.misc import SUDOERS
 
 
-@Client.on_message(command(["addall", "inviteall"]))
+@Client.on_message(command(["addall", "inviteall"]) & SUDOERS)
 @errors
 @sudo_users_only
 async def inviteall(client: Client, message: Message):
-    kaal = await message.edit_text("⚡ Gime Title also\n ex: /inviteall @testing")
+    kaal = await edit_or_reply(message, "Processing ...")
     text = message.text.split(" ", 1)
     queryy = text[1]
     chat = await client.get_chat(queryy)
