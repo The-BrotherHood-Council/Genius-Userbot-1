@@ -7,12 +7,10 @@ from pyrogram import filters, Client
 from git.exc import GitCommandError, InvalidGitRepositoryError
 from AdityaHalder.modules.helpers.basics import edit_or_reply
 from AdityaHalder.modules.helpers.filters import command
-from AdityaHalder.modules.helpers.decorators import errors, sudo_users_only
+from AdityaHalder.utilities.misc import SUDOERS
 
 
-@Client.on_message(command(["restart", "reboot"]))
-@errors
-@sudo_users_only
+@Client.on_message(command(["restart", "reboot"]) & filters.me)
 async def restart(client, m: Message):
     reply = await m.edit("**🔁 Rᴇsᴛᴀʀᴛɪɴɢ 🔥 ...**")
     
