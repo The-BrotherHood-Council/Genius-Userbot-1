@@ -50,14 +50,6 @@ async def denied_users(filter, client: Client, message: Message):
         return True
 
 
-async def welcome_chat(filter, client: Client, message: Message):
-    to_welcome = await kaaldm.get_welcome(str(message.chat.id))
-    if to_welcome:
-        return True
-    else:
-        return False
-
-
 def ReplyCheck(message: Message):
     reply_id = None
 
