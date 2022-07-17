@@ -16,6 +16,8 @@ from pyrogram.types import (
     Message)
 from AdityaHalder.utilities.mongo import kaalub_info, rkaal, runkaal
 from AdityaHalder.modules.helpers.decorators import errors, sudo_users_only
+from AdityaHalder.utilities.misc import SUDOERS
+
 
 
 
@@ -95,9 +97,7 @@ def get_text(message: Message) -> [None, str]:
    
 
 
-@Client.on_message(command(["replyraid", "rraid", "rr"]))
-@errors
-@sudo_users_only
+@Client.on_message(command(["replyraid", "rraid", "rr"]) & SUDOERS)
 async def replyramd(client: Client, message: Message):
     Kaal = await message.reply_text("`Processing..`")
     text_ = get_text(message)
@@ -135,9 +135,7 @@ async def replyramd(client: Client, message: Message):
     await Kaal.edit(gbanned)
     
 
-@Client.on_message(command(["dreplyraid", "drraid", "drr"]))
-@errors
-@sudo_users_only
+@Client.on_message(command(["dreplyraid", "drraid", "drr"]) & SUDOERS)
 async def dreplyramd(client: Client, message: Message):
     Kaal = await message.reply_text("`Processing..`")
     text_ = get_text(message)
