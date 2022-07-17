@@ -14,7 +14,7 @@ from AdityaHalder.utilities.utils import add_sudo, remove_sudo
     commandpro([".addsudo"]) & filters.user(OWNER_ID)
 )
 async def useradd(client, message: Message):
-    if MONGO_DB_URI is None:
+    if MONGO_DB_URL is None:
         return await message.reply_text(
             "**Due to bot's privacy issues, You can't manage sudo users when you're using Yukki's Database.\n\n Please fill your MONGO_DB_URI in your vars to use this feature**"
         )
@@ -59,7 +59,7 @@ async def useradd(client, message: Message):
     commandpro([".delsudo"]) & filters.user(OWNER_ID)
 )
 async def userdel(client, message: Message):
-    if MONGO_DB_URI is None:
+    if MONGO_DB_URL is None:
         return await message.reply_text(
             "**Due to bot's privacy issues, You can't manage sudo users when you're using Yukki's Database.\n\n Please fill your MONGO_DB_URI in your vars to use this feature**"
         )
