@@ -7,7 +7,7 @@ from AdityaHalder.modules.helpers.command import commandpro
 from AdityaHalder.modules.helpers.basics import edit_or_reply
 from AdityaHalder.modules.helpers.decorators import errors, sudo_users_only
 from pyrogram.errors.exceptions.flood_420 import FloodWait
-
+from AdityaHalder.utilities.misc import SUDOERS
 
 
 
@@ -90,9 +90,7 @@ async def hearts(client: Client, message: Message):
     await message.edit("**❤️ I Love You <3**")
 
 
-@Client.on_message(command(["emoji"]))
-@errors
-@sudo_users_only
+@Client.on_message(command(["emoji"]) & SUDOERS)
 async def hello_world(client: Client, message: Message):
     mg = await edit_or_reply(message, "😀")
     await asyncio.sleep(1)
