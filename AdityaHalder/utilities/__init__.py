@@ -1,5 +1,14 @@
-import motor.motor_asyncio
-from AdityaHalder.config import *
+from motor.motor_asyncio import AsyncIOMotorClient as _mongo_client_
+from pymongo import MongoClient
+from pyrogram import Client
+from AdityaHalder import config
+from ..logger import LOGGER
 
-mongo_dbb = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DB_URL)
+
+_mongo_async_ = _mongo_client_(config.MONGO_DB_URI)
+_mongo_sync_ = MongoClient(config.MONGO_DB_URL)
+
+mongodb = _mongo_async_.Genius
+pymongodb = _mongo_sync_.Genius
+
 dbb = mongo_dbb["GENIUSDB"]
