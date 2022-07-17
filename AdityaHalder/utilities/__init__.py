@@ -11,4 +11,4 @@ _mongo_sync_ = MongoClient(config.MONGO_DB_URL)
 mongodb = _mongo_async_.Genius
 pymongodb = _mongo_sync_.Genius
 
-dbb = mongo_dbb["GENIUSDB"]
+dbb = _mongo_async_["GENIUSDB"]
