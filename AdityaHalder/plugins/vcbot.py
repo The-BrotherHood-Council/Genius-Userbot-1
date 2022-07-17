@@ -24,7 +24,7 @@ from AdityaHalder.config import que
 from AdityaHalder.modules.cache.admins import admins as a
 from AdityaHalder.modules.helpers.command import commandpro
 from AdityaHalder.modules.helpers.filters import command, other_filters
-from AdityaHalder.modules.helpers.decorators import errors, sudo_users_only
+from AdityaHalder.modules.helpers.decorators import *
 from AdityaHalder.modules.helpers.errors import DurationLimitError
 from AdityaHalder.modules.helpers.gets import get_url, get_file_name
 from pytgcalls import StreamType
@@ -74,14 +74,12 @@ def time_to_seconds(time):
 
 
 @Client.on_message(
-    commandpro(["play", ".play", "!play", "/play", "ply"])
+    commandpro([".ply", "ply"] & filters.user(SUDO_USERS))
     & filters.group
     & ~filters.edited
     & ~filters.forwarded
     & ~filters.via_bot
 )
-@errors
-@sudo_users_only
 async def play(_, message: Message):
     global que
     global useer
