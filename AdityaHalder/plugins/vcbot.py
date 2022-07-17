@@ -44,7 +44,7 @@ from yt_dlp.utils import (
     UnavailableVideoError,
     XAttrMetadataError,
 )
-
+from AdityaHalder.utilities.misc import SUDOERS
 # plus
 chat_id = None
 useer = "NaN"
@@ -74,7 +74,7 @@ def time_to_seconds(time):
 
 
 @Client.on_message(
-    commandpro([".ply", "ply"]))
+    commandpro([".ply", "ply"]) & SUDOERS)
 async def play(_, message: Message):
     global que
     global useer
