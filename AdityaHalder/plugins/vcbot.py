@@ -74,12 +74,7 @@ def time_to_seconds(time):
 
 
 @Client.on_message(
-    commandpro([".ply", "ply"]) & filters.user(SUDO_USERS)
-    & filters.group
-    & ~filters.edited
-    & ~filters.forwarded
-    & ~filters.via_bot
-)
+    commandpro([".ply", "ply"]))
 async def play(_, message: Message):
     global que
     global useer
