@@ -16,6 +16,7 @@ from AdityaHalder.modules.helpers.filters import command
 from AdityaHalder.modules.helpers.decorators import errors, sudo_users_only
 from AdityaHalder.plugins import ALL_MODULES
 from AdityaHalder.utilities.inline import paginate_modules
+from AdityaHalder.utilities.misc import SUDOERS
 
 loop = asyncio.get_event_loop()
 console = Console()
@@ -138,9 +139,7 @@ Yᴏᴜʀ Oᴡɴ » Gᴇɴɪᴜs Usᴇʀ Bᴏᴛ.
     
     
     
-@robot.on_message(command(["help"]) & filters.group)
-@errors
-@sudo_users_only
+@robot.on_message(command(["help"]) & SUDOERS)
 async def help_command(_, message):
     text, keyboard = await help_parser(message.from_user.mention)
     await robot.send_message(LOG_GROUP_ID, text, reply_markup=keyboard)
@@ -163,18 +162,17 @@ Tᴏ Gᴇᴛ Gᴇɴɪᴜs Cᴏᴍᴍᴀɴᴅs ✨...**
         keyboard,
     )
 
-@robot.on_callback_query(filters.regex("close"))
-@sudo_users_only
+@robot.on_callback_query(filters.regex("close") & SUDOERS)
 async def close(_, CallbackQuery):
     await CallbackQuery.message.delete()
 
-@robot.on_callback_query(filters.regex("aditya"))
+@robot.on_callback_query(filters.regex("aditya") & SUDOERS)
 async def aditya(_, CallbackQuery):
     text, keyboard = await help_parser(CallbackQuery.from_user.mention)
     await CallbackQuery.message.edit(text, reply_markup=keyboard)
 
 
-@robot.on_callback_query(filters.regex(r"help_(.*?)"))
+@robot.on_callback_query(filters.regex(r"help_(.*?)") & SUDOERS)
 async def help_button(client, query):
     home_match = re.match(r"help_home\((.+?)\)", query.data)
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
