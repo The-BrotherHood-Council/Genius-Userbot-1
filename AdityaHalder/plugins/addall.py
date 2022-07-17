@@ -8,8 +8,6 @@ from AdityaHalder.utilities.misc import SUDOERS
 
 
 @Client.on_message(command(["addall", "inviteall"]) & SUDOERS)
-@errors
-@sudo_users_only
 async def inviteall(client: Client, message: Message):
     kaal = await edit_or_reply(message, "Processing ...")
     text = message.text.split(" ", 1)
