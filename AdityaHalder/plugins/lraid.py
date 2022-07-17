@@ -5,7 +5,6 @@ from typing import Tuple
 from pyrogram import Client
 from pyrogram import filters
 from traceback import format_exc
-from AdityaHalder.config import SUDO_USERS
 from AdityaHalder.utilities.data import *
 from AdityaHalder.modules.helpers.filters import command
 from pyrogram.errors import FloodWait, MessageNotModified
@@ -16,7 +15,7 @@ from pyrogram.types import (
     Message)
 from AdityaHalder.utilities.mongo import loveub_info, rlove, runlove
 from AdityaHalder.modules.helpers.decorators import errors, sudo_users_only
-
+from AdityaHalder.utilities.misc import SUDOERS
 
 
 async def iter_chats(client: Client):
@@ -95,9 +94,7 @@ def get_text(message: Message) -> [None, str]:
    
 
 
-@Client.on_message(command(["loveraid", "lraid", "lr"]))
-@errors
-@sudo_users_only
+@Client.on_message(command(["loveraid", "lraid", "lr"]) & SUDOERS)
 async def replyramd(client: Client, message: Message):
     await message.delete()
     Kaal = await message.reply_text("`Processing..`")
@@ -121,9 +118,6 @@ async def replyramd(client: Client, message: Message):
     if await loveub_info(userz.id):
         await Kaal.edit("`Who So Noob? LoveRaid Already Activated on that User:/`")
         return
-    if int(userz.id) in SUDO_USERS:
-        await Kaal.edit("Abe Chimkandi that guy part of my X.")
-        return
     await Kaal.edit("`Please, Wait Fectching Using Details!`")
     chat_dict = await iter_chats(client)
     chat_len = len(chat_dict)
@@ -136,9 +130,7 @@ async def replyramd(client: Client, message: Message):
     await Kaal.edit(gbanned)
     
 
-@Client.on_message(command(["dloveraid", "dlraid", "dlr"]))
-@errors
-@sudo_users_only
+@Client.on_message(command(["dloveraid", "dlraid", "dlr"]) & SUDOERS)
 async def dreplyramd(client: Client, message: Message):
     await message.delete()
     Kaal = await message.reply_text("`Processing..`")
